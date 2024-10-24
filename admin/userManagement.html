@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المستخدمين - لوحة التحكم</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">إدارة المستخدمين</h1>
+        <a href="/admin/dashboard.html" class="mb-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            العودة للصفحة الرئيسية
+        </a>
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <h2 class="text-2xl font-semibold mb-4">قائمة المستخدمين</h2>
+            <table class="w-full">
+                <thead>
+                    <tr>
+                        <th class="text-left">الاسم</th>
+                        <th class="text-left">البريد الإلكتروني</th>
+                        <th class="text-left">تاريخ التسجيل</th>
+                        <th class="text-left">الحالة</th>
+                        <th class="text-left">الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody id="userList">
+                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/admin/js/main.js"></script>
+    <script src="/admin/js/userManagement.js"></script>
+</body>
+</html>
+

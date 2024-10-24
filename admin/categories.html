@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة التصنيفات - عالم الروايات</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-white shadow-md">
+            <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-gray-800">إدارة التصنيفات</h1>
+                <a href="dashboard.html" class="text-blue-500 hover:text-blue-600">
+                    <i class="fas fa-arrow-left ml-2"></i>
+                    العودة للوحة التحكم
+                </a>
+            </div>
+        </header>
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">إضافة تصنيف جديد</h2>
+                <form id="addCategoryForm" class="space-y-4">
+                    <div>
+                        <label for="categoryName" class="block text-sm font-medium text-gray-700">اسم التصنيف</label>
+                        <input type="text" id="categoryName" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300">
+                    </div>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                        <i class="fas fa-plus ml-2"></i>
+                        إضافة التصنيف
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">قائمة التصنيفات</h2>
+                <ul id="categoryList" class="space-y-2"></ul>
+            </div>
+        </main>
+        <footer class="bg-white shadow-md mt-8">
+            <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+                &copy; 2024 عالم الروايات. جميع الحقوق محفوظة.
+            </div>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/categories.js"></script>
+</body>
+</html>
+

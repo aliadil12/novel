@@ -1,0 +1,119 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الفصول - عالم الروايات</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-white shadow-md">
+            <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-gray-800">إدارة الفصول</h1>
+                <a href="dashboard.html" class="text-blue-500 hover:text-blue-600">
+                    <i class="fas fa-arrow-left ml-2"></i>
+                    العودة للوحة التحكم
+                </a>
+            </div>
+        </header>
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">إضافة فصول جديدة</h2>
+                <form id="addChaptersForm" class="space-y-4">
+                    <div>
+                        <label for="novelSelect" class="block text-sm font-medium text-gray-700">الرواية</label>
+                        <select id="novelSelect" name="novelId" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300">
+                            <option value="">اختر رواية</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="chapterFiles" class="block text-sm font-medium text-gray-700">ملفات الفصول (txt.)</label>
+                        <input type="file" id="chapterFiles" name="chapters" accept=".txt" multiple required class="mt-1 block w-full">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">خيار النشر</label>
+                        <div class="mt-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="publishOption" value="now" class="form-radio" checked>
+                                <span class="ml-2">نشر الآن</span>
+                            </label>
+                            <label class="inline-flex items-center ml-6">
+                                <input type="radio" name="publishOption" value="schedule" class="form-radio">
+                                <span class="ml-2">جدولة النشر</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="scheduleOptions" class="hidden space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">نوع الجدولة</label>
+                            <div class="mt-2">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="scheduleType" value="single" class="form-radio" checked>
+                                    <span class="ml-2">دفعة واحدة</span>
+                                </label>
+                                <label class="inline-flex items-center ml-6">
+                                    <input type="radio" name="scheduleType" value="multiple" class="form-radio">
+                                    <span class="ml-2">أكثر من دفعة</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="singleBatchOptions" class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">توقيت النشر</label>
+                            <div class="flex space-x-2">
+                                <input type="number" id="scheduleDays" min="0" class="w-20 rounded-md border-gray-300" placeholder="أيام">
+                                <input type="number" id="scheduleHours" min="0" max="23" class="w-20 rounded-md border-gray-300" placeholder="ساعات">
+                                <input type="number" id="scheduleMinutes" min="0" max="59" class="w-20 rounded-md border-gray-300" placeholder="دقائق">
+                            </div>
+                        </div>
+                        <div id="multipleBatchOptions" class="hidden space-y-2">
+                            <div>
+                                <label for="batchCount" class="block text-sm font-medium text-gray-700">عدد الدفعات</label>
+                                <input type="number" id="batchCount" min="1" class="mt-1 block w-full rounded-md border-gray-300" placeholder="عدد الدفعات">
+                            </div>
+                            <div>
+                                <label for="chaptersPerBatch" class="block text-sm font-medium text-gray-700">عدد الفصول لكل دفعة</label>
+                                <input type="number" id="chaptersPerBatch" min="1" class="mt-1 block w-full rounded-md border-gray-300" placeholder="عدد الفصول لكل دفعة">
+                            </div>
+                            <div>
+                                <label for="batchInterval" class="block text-sm font-medium text-gray-700">الفاصل الزمني بين الدفعات (بالساعات)</label>
+                                <input type="number" id="batchInterval" min="1" class="mt-1 block w-full rounded-md border-gray-300" placeholder="الفاصل الزمني بالساعات">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                        <i class="fas fa-plus ml-2"></i>
+                        إضافة الفصول
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">قائمة الفصول</h2>
+                <div id="chapterList" class="space-y-4"></div>
+            </div>
+        </main>
+        <footer class="bg-white shadow-md mt-8">
+            <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+                &copy; 2024 عالم الروايات. جميع الحقوق محفوظة.
+            </div>
+        </footer>
+    </div>
+    <script src="js/chapters.js"></script>
+</body>
+</html>
+
+
+
+
+
+

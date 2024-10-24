@@ -1,0 +1,82 @@
+
+
+
+
+
+
+
+
+
+
+
+/* admin/css/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+.hover-pulse:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Custom styles for Select2 */
+.select2-container--default .select2-selection--multiple {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    min-height: 38px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.5);
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #e5e7eb;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    padding: 2px 6px;
+    margin-top: 4px;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+
+
+
+
+
+
+

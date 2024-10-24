@@ -1,0 +1,146 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 47.4% 11.2%;
+    --muted: 24 33% 94%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --card: 24 33% 98%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --border: 24 33% 85%;
+    --input: 214.3 31.8% 91.4%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 24 95% 90%;
+    --accent-foreground: 24 95% 30%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 24 95% 53%;
+    --radius: 0.5rem;
+    --chapter-title: 222.2 47.4% 11.2%;
+    --chapter-number: 24 95% 53%;
+    --icon-color: 24 95% 53%;
+    --button-bg: 24 33% 94%;
+    --button-text: 222.2 47.4% 11.2%;
+    --button-hover-bg: 24 33% 90%;
+    --button-hover-text: 24 95% 35%;
+    --hover-bg: 24 33% 90%;
+    --hover-text: 24 95% 35%;
+  }
+
+  .dark {
+    --background: 20 14% 12%;
+    --foreground: 213 31% 91%;
+    --muted: 20 14% 20%;
+    --muted-foreground: 215.4 16.3% 76.9%;
+    --popover: 20 14% 12%;
+    --popover-foreground: 215 20.2% 85.1%;
+    --card: 20 14% 16%;
+    --card-foreground: 213 31% 91%;
+    --border: 20 14% 26%;
+    --input: 20 14% 26%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 20 14% 12%;
+    --secondary: 20 14% 24%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 45 100% 25%;
+    --accent-foreground: 45 100% 75%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 45 100% 50%;
+    --hover-bg: 45 100% 15%;
+    --hover-text: 45 100% 75%;
+    --button-bg: 45 100% 15%;
+    --button-text: 45 100% 75%;
+    --button-hover-bg: 45 100% 20%;
+    --button-hover-text: 45 100% 80%;
+  }
+}
+
+@layer components {
+  .theme-card {
+    @apply bg-card text-card-foreground;
+  }
+
+  .theme-hover {
+    @apply hover:bg-[hsl(var(--hover-bg))] hover:text-[hsl(var(--hover-text))];
+  }
+
+  .theme-border {
+    @apply border-border;
+  }
+
+  .theme-icon {
+    @apply text-[hsl(var(--icon-color))];
+  }
+
+  .theme-button {
+    @apply bg-[hsl(var(--button-bg))] text-[hsl(var(--button-text))] hover:bg-[hsl(var(--button-hover-bg))] hover:text-[hsl(var(--button-hover-text))];
+  }
+
+  .theme-status {
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .theme-header-hover {
+    @apply hover:bg-[hsl(var(--hover-bg))] hover:text-[hsl(var(--hover-text))];
+  }
+
+  .chapter-title {
+    @apply text-[hsl(var(--chapter-title))] font-bold;
+  }
+
+  .chapter-number {
+    @apply text-[hsl(var(--chapter-number))] font-bold;
+  }
+
+  .chapter-info-icon {
+    @apply text-[hsl(var(--icon-color))];
+  }
+
+  .chapter-navigation-button {
+    @apply bg-[hsl(var(--button-bg))] text-[hsl(var(--button-text))] hover:bg-[hsl(var(--button-hover-bg))] hover:text-[hsl(var(--button-hover-text))];
+  }
+
+  .chapter-content-card {
+    @apply bg-card text-card-foreground border-t border-border;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@media (max-width: 640px) {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الروايات - عالم الروايات</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-white shadow-md">
+            <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-gray-800">إدارة الروايات</h1>
+                <a href="dashboard.html" class="text-blue-500 hover:text-blue-600">
+                    <i class="fas fa-arrow-left ml-2"></i>
+                    العودة للوحة التحكم
+                </a>
+            </div>
+        </header>
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">إضافة رواية جديدة</h2>
+                <form id="addNovelForm" class="space-y-4">
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700">عنوان الرواية</label>
+                        <input type="text" id="title" name="title" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300">
+                    </div>
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700">وصف الرواية</label>
+                        <textarea id="description" name="description" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300" rows="4"></textarea>
+                    </div>
+                    <div>
+                        <label for="cover" class="block text-sm font-medium text-gray-700">صورة الغلاف</label>
+                        <input type="file" id="cover" name="cover" accept="image/*" required class="mt-1 block w-full">
+                    </div>
+                    <div>
+                        <label for="categories" class="block text-sm font-medium text-gray-700">التصنيفات</label>
+                        <select id="categories" name="categories" multiple required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300">
+                            <!-- سيتم ملؤها ديناميكيًا -->
+                        </select>
+                    </div>
+                    <div>
+                        <label for="completionStatus" class="block text-sm font-medium text-gray-700">حالة الاكتمال</label>
+                        <select id="completionStatus" name="completionStatus" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300">
+                            <option value="جارية">جارية</option>
+                            <option value="مكتملة">مكتملة</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="section" class="block text-sm font-medium text-gray-700">القسم</label>
+                        <select id="section" name="section" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300">
+                          <option value="most-viewed-month">الأكثر مشاهدة خلال 30 يوم</option>
+                          <option value="most-viewed-24h">الأكثر مشاهدة خلال 24 ساعة</option>
+                          <option value="random">ترتيب عشوائي</option>
+                          <option value="latest">أحدث الروايات</option>
+                          <option value="completed">الروايات المكتملة</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="supporters" class="block text-sm font-medium text-gray-700">الداعمون (مفصولين بفواصل)</label>
+                        <input type="text" id="supporters" name="supporters" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300">
+                    </div>
+                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                        <i class="fas fa-plus ml-2"></i>
+                        إضافة الرواية
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4 text-gray-800">قائمة الروايات</h2>
+                <ul id="novelList" class="space-y-2"></ul>
+            </div>
+        </main>
+        <footer class="bg-white shadow-md mt-8">
+            <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+                &copy; 2024 عالم الروايات. جميع الحقوق محفوظة.
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/novels.js"></script>
+</body>
+</html>
+
